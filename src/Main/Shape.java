@@ -1,6 +1,6 @@
 package Main;
 
-public abstract class Shape {
+public abstract interface Shape {
 	
     public abstract double getArea();
     
