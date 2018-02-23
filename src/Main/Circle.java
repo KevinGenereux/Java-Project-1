@@ -29,7 +29,7 @@ public class Circle implements TwoDimensionalShape{
 	
 	@Override
 	public String toString() {
-		return String.format("The perimeter of the circle is: %.2f \n The area of the circle is: %.2f", getPerimeter(), getArea());
+		return "a circle of radius " + radius;
 	}
 }
 

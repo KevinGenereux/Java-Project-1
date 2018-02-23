@@ -32,8 +32,7 @@ public class Triangle implements TwoDimensionalShape {
     }
     
     @Override
-	public String toString() {
-		return String.format("The perimeter of the triangle is: %.2f \n The area of the rectangle is: %.2f", getPerimeter(), getArea());
+    public String toString() {
+		return "a triangle of side lengths " + side1 + ", "+ side2 + ", "+ side3;
 	}
-    
 }

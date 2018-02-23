@@ -24,4 +24,9 @@ public class Cube implements ThreeDimensionalShape{
 	public double getVolume() {
 		return Math.pow(side, 3);
 	}
+	
+	@Override
+	public String toString() {
+		return "a cube of side length " + side;
+	}
 }

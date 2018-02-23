@@ -26,7 +26,7 @@ public class Square implements TwoDimensionalShape{
     }
 
     @Override
-	public String toString() {
-		return String.format("The perimeter of the square is: %.2f \n The area of the square is: %.2f", getPerimeter(), getArea());
+    public String toString() {
+		return "a square of side length " + side;
 	}
 }
