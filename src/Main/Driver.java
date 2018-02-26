@@ -107,10 +107,16 @@ public class Driver {
 			try {
 				toReturn = s.nextDouble();
 				err = false;
+				
+				// not accepting negative values
+				if (toReturn < 0) {
+					err = true;
+				}
 			} catch (InputMismatchException e) {
 				err = true;
-				System.out.println("Invalid input, try again!\n");
 			}
+			if (err)
+				System.out.println("Invalid input, try again!\n");
 			s.nextLine();
 		} while (err);
 		return toReturn;
