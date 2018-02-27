@@ -26,7 +26,13 @@ public class Driver {
 					+ "1 - Use the default shapes\n"
 					+ "2 - Enter data for shapes\n" 
 					+ "3 - Exit the Program\n");
-			choice = safeScanInt(s);
+			do { // choice must be between 1 and 3, inclusive
+				choice = safeScanInt(s);
+				if (choice > 3 || choice < 1) {
+					System.err.println("Invalid input, try again!\n");
+					choice = 0;
+				}
+			} while (choice == 0);
 	
 
 			// switch to interpret user input
@@ -78,7 +84,7 @@ public class Driver {
 		shapes[3] = new Sphere(safeScanDouble(s));
 		
 		// cube
-		System.out.println("What should the side lenth of the cube be?");
+		System.out.println("What should the side length of the cube be?");
 		shapes[4] = new Cube(safeScanDouble(s));
 		
 		testShapes(shapes,s);
@@ -88,7 +94,7 @@ public class Driver {
 	public static void testShapes(Shape[] shapes, Scanner s) {
 		
 		for (int i = 0; i < 5; i++) {
-			System.out.println("\nShape " + i + ": " + shapes[i].toString());
+			System.out.println("\nShape " + (i + 1) + ": " + shapes[i].toString());
 			if (shapes[i] instanceof TwoDimensionalShape) {
 				System.out.println("Area: " + shapes[i].getArea());
 				System.out.println("Perimeter: " + ((TwoDimensionalShape)shapes[i]).getPerimeter());
@@ -125,7 +131,7 @@ public class Driver {
 				err = true;
 			}
 			if (err)
-				System.out.println("Invalid input, try again!\n");
+				System.err.println("Invalid input, try again!\n");
 			s.nextLine();
 		} while (err);
 		return toReturn;
@@ -144,7 +150,7 @@ public class Driver {
 				err = false;
 			} catch (InputMismatchException e) {
 				err = true;
-				System.out.println("Invalid input, try again!\n");
+				System.err.println("Invalid input, try again!\n");
 			}
 			s.nextLine();
 		} while (err);
